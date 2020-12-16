@@ -14,7 +14,7 @@
 # settings used by the core code
 
 NOUT = 2000    # number of time-steps
-TIMESTEP = 100 # time between outputs
+TIMESTEP = 200 # time between outputs
 
 MXG = 2
 MYG = 1      # No y derivatives, so no guard cells needed in y
@@ -239,4 +239,5 @@ bndry_xout = dirichlet_o2(2.5e-5)
 
 [external_field]
 
-function =1000*(6*(x-0.5)^2 +0.1*cos(z-pi))
+IslandWidth = 0.1     #Magnetic Island  Width in [m]
+function = 0.5 * (x - 0.5)^2 + 0.25 * IslandWidth^2 * cos(z-pi) #Pertubation field added to psi creates the island
