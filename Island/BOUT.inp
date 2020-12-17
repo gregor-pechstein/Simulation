@@ -238,6 +238,7 @@ function = 1
 bndry_xout = dirichlet_o2(2.5e-5)
 
 [external_field]
-
+Bnorm = 2.5  # Magnetic field [T]
 IslandWidth = 0.1     #Magnetic Island  Width in [m]
-function = 0.5 * (x - 0.5)^2 + 0.25 * IslandWidth^2 * cos(z-pi) #Pertubation field added to psi creates the island
+W=IslandWidth * Bnorm #normalizing the IslandWidth 
+function = 0.5 * (x - 0.5)^2 + 0.25 * W^2 * cos(z-pi) #Pertubation field added to psi creates the island
