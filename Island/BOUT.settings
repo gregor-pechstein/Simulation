@@ -35,7 +35,7 @@ upwind = w3		# not used , from: ../Simulation/Island//BOUT.inp
 bnorm = 2.5		# not used , from: ../Simulation/Island//BOUT.inp
 function = 0.5 * (x - 0.5)^2 + 0.25 * w^2 * cos(z-pi)		# not used , from: ../Simulation/Island//BOUT.inp
 islandwidth = 0.1		# not used , from: ../Simulation/Island//BOUT.inp
-w = islandwidth * bnorm		# not used , from: ../Simulation/Island//BOUT.inp
+w = islandwidth *mesh:bpxy		# not used , from: ../Simulation/Island//BOUT.inp
 
 [hermes]
 aa = 1		# not used , from: ../Simulation/Island//BOUT.inp
@@ -152,7 +152,7 @@ scale = 2.5e-5		# not used , from: ../Simulation/Island//BOUT.inp
 
 [run]
 revision = 20f8d3e2dfe2e255b08522ecc4398415d26bd7d5		# not used , from: 
-started = Thu Dec 17 17:24:01 2020
+started = Fri Dec 18 15:10:49 2020
 		# not used , from: 
 version = 4.3.2		# not used , from: 
 
