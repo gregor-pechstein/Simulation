@@ -14,23 +14,23 @@
 # settings used by the core code
 
 NOUT = 2000    # number of time-steps
-TIMESTEP = 200 # time between outputs
+TIMESTEP = 100 # time between outputs
 
 MXG = 2
 MYG = 1      # No y derivatives, so no guard cells needed in y
 
 [mesh]
 
-Lx = 0.20  # Length in x [m]
-Lz = 0.20  # Length in z [m]
+Lx = 0.10  # Length in x [m]
+Lz = 0.10  # Length in z [m]
 
-nx = 516   # Radial resolution including 4 guard cells
+nx = 68   # Radial resolution including 4 guard cells
 ny = 8
-nz = 512   # number of points in z direction (2^n)
+nz = 64   # number of points in z direction (2^n)
 
-Rxy = 6.0    # Major radius
+Rxy = 1.0    # Major radius
 
-Bpxy = 2.5  # Magnetic field [T]
+Bpxy = 0.5  # Magnetic field [T]
 
 bxcvz = 1./Rxy^2  # Curvature
 
@@ -123,7 +123,7 @@ resistivity    = true  # Resistivity: Psi -> Pe
 thermal_flux   = true
 thermal_force  = true
 electron_viscosity = true
-ion_viscosity  = false  # Ion parallel viscosity
+ion_viscosity  = true  # Ion parallel viscosity
 thermal_conduction = true
 
 neutral_model = 0 	# Evolve neutral gas method
@@ -133,7 +133,7 @@ neutral_model = 0 	# Evolve neutral gas method
 			# 3 - full neutral model
                         # 4 - Diffusive in XZ, fluid in Y
 frecycle = 0.0
-carbon_fraction = 0.01  # Carbon %
+carbon_fraction = 0.0  # Carbon %
 
 ## Settings for 2D parallel closures
 sinks = false
@@ -185,7 +185,7 @@ verbose = false  # Output additional fields Telim and Jpar
 
 Nnorm = 6e18  # Background plasma density (m^-3)
 Tnorm = 22.     # Electron Temperature (eV)
-Bnorm = 2.5  # Magnetic field [T]
+Bnorm = 0.5  # Magnetic field [T]
 AA = 1       # Ion mass (1 = Hydrogen)
 # Dissipation, numerical terms
 
@@ -237,8 +237,11 @@ function = 1
 
 bndry_xout = dirichlet_o2(2.5e-5)
 
+[Vi] # Ion velocity
+bndry_xout =neumann
+
 [external_field]
-IslandWidth = 0.1          #Magnetic Island  Width in [m]
+IslandWidth = 0.05          #Magnetic Island  Width in [m]
 W=IslandWidth *mesh:Bpxy   #normalizing the IslandWidth
 
 #Pertubation field added to psi creates the island

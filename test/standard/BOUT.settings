@@ -1,10 +1,8 @@
-append = true		# not used , from: Command line
 datadir = ./		# not used , from: 
 mxg = 2		# not used , from: .//BOUT.inp
 myg = 1		# not used , from: .//BOUT.inp
 nout = 2000		# not used , from: .//BOUT.inp
 optionfile = BOUT.inp		# not used , from: 
-restart = true		# not used , from: Command line
 settingsfile = BOUT.settings		# not used , from: 
 timestep = 200		# not used , from: .//BOUT.inp
 
@@ -35,7 +33,7 @@ upwind = w3		# not used , from: .//BOUT.inp
 
 [external_field]
 function = 0.5 * (x - 0.5)^2 + 0.25 * w^2 * cos(z-pi)		# not used , from: .//BOUT.inp
-islandwidth = 0.1		# not used , from: .//BOUT.inp
+islandwidth = 0.05		# not used , from: .//BOUT.inp
 w = islandwidth *mesh:bpxy		# not used , from: .//BOUT.inp
 
 [hermes]
@@ -44,9 +42,9 @@ adapt_source = false		# not used , from: .//BOUT.inp
 alpha_dw = 1e-3*h(0.3-x)		# not used , from: .//BOUT.inp
 anomalous_chi = -1.		# not used , from: .//BOUT.inp
 anomalous_d = -1.		# not used , from: .//BOUT.inp
-bnorm = 2.5		# not used , from: .//BOUT.inp
+bnorm = 0.5		# not used , from: .//BOUT.inp
 boussinesq = true		# not used , from: .//BOUT.inp
-carbon_fraction = 1.0		# not used , from: .//BOUT.inp
+carbon_fraction = 0.0		# not used , from: .//BOUT.inp
 classical_diffusion = true		# not used , from: .//BOUT.inp
 core_sources = false		# not used , from: .//BOUT.inp
 drift_wave = true		# not used , from: .//BOUT.inp
@@ -57,7 +55,7 @@ finiteelmass = true		# not used , from: .//BOUT.inp
 frecycle = 0.0		# not used , from: .//BOUT.inp
 ion_neutral = 0.0		# not used , from: .//BOUT.inp
 ion_velocity = true		# not used , from: .//BOUT.inp
-ion_viscosity = false		# not used , from: .//BOUT.inp
+ion_viscosity = true		# not used , from: .//BOUT.inp
 j_diamag = true		# not used , from: .//BOUT.inp
 j_par = true		# not used , from: .//BOUT.inp
 low_n_diffuse = false		# not used , from: .//BOUT.inp
@@ -104,7 +102,7 @@ outer_boundary_flags = 16		# not used , from: .//BOUT.inp
 type = cyclic		# not used , from: .//BOUT.inp
 
 [mesh]
-bpxy = 2.5		# not used , from: .//BOUT.inp
+bpxy = 0.5		# not used , from: .//BOUT.inp
 btxy = 0.0		# not used , from: .//BOUT.inp
 bxcvz = 1./rxy^2		# not used , from: .//BOUT.inp
 bxy = bpxy		# not used , from: .//BOUT.inp
@@ -114,12 +112,12 @@ dz = lz / (rxy * nz)		# not used , from: .//BOUT.inp
 hthe = 1.0		# not used , from: .//BOUT.inp
 ixseps1 = nx+2		# not used , from: .//BOUT.inp
 ixseps2 = nx+2		# not used , from: .//BOUT.inp
-lx = 0.20		# not used , from: .//BOUT.inp
-lz = 0.20		# not used , from: .//BOUT.inp
-nx = 516		# not used , from: .//BOUT.inp
+lx = 0.10		# not used , from: .//BOUT.inp
+lz = 0.10		# not used , from: .//BOUT.inp
+nx = 68		# not used , from: .//BOUT.inp
 ny = 8		# not used , from: .//BOUT.inp
-nz = 512		# not used , from: .//BOUT.inp
-rxy = 6.0		# not used , from: .//BOUT.inp
+nz = 64		# not used , from: .//BOUT.inp
+rxy = 1.0		# not used , from: .//BOUT.inp
 symmetricglobalx = true		# not used , from: .//BOUT.inp
 
 [ne]
@@ -153,7 +151,7 @@ scale = 2.5e-5		# not used , from: .//BOUT.inp
 
 [run]
 revision = e83048a429383ab0277d68c74b407f50bc5bf54d		# not used , from: 
-started = Tue Jan  5 19:31:07 2021
+started = Mon Jan 11 12:18:29 2021
 		# not used , from: 
 version = 4.3.1		# not used , from: 
 
